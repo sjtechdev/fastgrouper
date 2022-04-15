@@ -3,3 +3,4 @@
 .cache
 grouper.egg-info
 dist
+fastgrouper.egg-info
