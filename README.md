@@ -1,2 +1,2 @@
-# grouper
-Efficient tools for groupby operations, in python.
+# fastgrouper
+Efficient tools for groupby-apply operations, in python.

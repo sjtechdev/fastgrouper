@@ -1,8 +1,8 @@
 import numpy as np
 from   numpy.testing import assert_almost_equal
 
-import grouper.arr
-import grouper.li
+import fastgrouper.arr
+import fastgrouper.li
 
 EXPECTED_APPLY = [3.525, 3.2, -0.3]
 EXPECTED_APPLY_EXPAND = [3.525, 3.2 , 3.525, 3.525, -0.3, 3.525, 3.2]
@@ -16,7 +16,7 @@ def foobar_op(x, y):
 def test_arr_grouped():
     
     # Prepare example
-    arr_grpr = grouper.arr.Grouped(GIDS)
+    arr_grpr = fastgrouper.arr.Grouped(GIDS)
     
     # Check apply with positional args
     result = arr_grpr.apply(foobar_op, XVALS, YVALS)
@@ -38,7 +38,7 @@ def test_arr_grouped():
 def test_li_grouped():
     
     # Prepare example
-    li_grpr = grouper.li.Grouped(GIDS)
+    li_grpr = fastgrouper.li.Grouped(GIDS)
     
     # Check apply with keyword args
     result = li_grpr.apply(foobar_op, XVALS, y=YVALS)
