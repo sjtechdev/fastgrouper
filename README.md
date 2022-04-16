@@ -57,7 +57,7 @@ xvals = np.array([2, 3, 4])
 gids  = np.array([10, -20, 10])
 
 grpd = fastgrouper.li.Grouped(gids)
-grpd.apply(bop, xvals) # returns [[2, 4], [3]]
+grpd.apply(bop, xvals) # [[2, 4], [3]]
 ```
   
 For additional examples, checkout the [tests](./python/fastgrouper/test).
