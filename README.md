@@ -13,7 +13,7 @@ python -m pip install fastgrouper
 
 # Usage
 
-Use the `arr` interface, for numpy array focused applications.
+Use the `arr` interface, for numpy array related applications.
 
 ```python
 import numpy as np
