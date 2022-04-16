@@ -34,10 +34,10 @@ grpd = fastgrouper.arr.Grouped(gids)
 result = grpd.apply(baz, xvals, y=yvals) # np.array([7.5, 4])
 
 # Perform groupby-apply, and then expand results back to align with the gids provided.
-result = grpd.apply_expand(baz, xvals, yvals) # np.array([7.5, 4. , 7.5])
+result = grpd.apply_expand(baz, xvals, yvals) # np.array([7.5, 4])
 
 # Perform groupby-apply, and then expand results back to align with the gids provided.
-result = grpd.apply_expand(baz, xvals, yvals) # np.array([7.5, 4. , 7.5])
+result = grpd.apply_expand(baz, xvals, yvals) # np.array([7.5, 4, 7.5])
 ```
 
 The `li` interface returns the results over the groups as a list (instead of an array); this may be useful for functions that return different-sized results. Note that in all interfaces (e.g. both `arr` and `li`), the order in which the group elements appear is preserved when the group slices are passed to the function being applied.
