@@ -8,7 +8,7 @@ jobs:
       - checkout  # checkout source code to working directory
       - run:
           command: |  # Install package
-            sudo pip install pipenv
+            sudo pip install -U pipenv
             pipenv install .
       - run:
           command: |  # Run tests
