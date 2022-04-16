@@ -1,7 +1,15 @@
-[![<sjoshistrats>](https://circleci.com/gh/sjoshistrats/fastgrouper.svg?style=svg)](https://app.circleci.com/pipelines/github/sjoshistrats/fastgrouper?branch=master)
+[![<sjoshistrats>](https://circleci.com/gh/sjoshistrats/fastgrouper.svg?style=shield)](https://app.circleci.com/pipelines/github/sjoshistrats/fastgrouper?branch=master)
 
 # fastgrouper
 Allows for fast groupby-apply operations, in python.
+  
+# Install
+  
+Users can install the package from PyPI via:
+  
+```shell
+python -m pip install fastgrouper
+```
 
 # Usage
 
@@ -9,7 +17,7 @@ Use the `arr` interface, for numpy array focused applications.
 
 ```python
 import numpy as np
-import fastgrouper.li
+import fastgrouper.arr
   
 def baz(x, y):
     return np.mean(x + y) - 3
