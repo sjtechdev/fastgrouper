@@ -3,18 +3,17 @@ version: 2.1
 jobs:
   build_test:
     docker:
-      - image: cimg/python:3.6
+      - image: circleci/python:3.6.4
     steps:
       - checkout  # checkout source code to working directory
       - run:
           command: |  # Install package
-            sudo pip3 install -U pipenv
+            sudo pip install -U pipenv
             pipenv install .
       - run:
           command: |  # Run tests
             pipenv install pytest
             pipenv run pytest python/fastgrouper/test/ -s -vv
-
 workflows:
   build_test:
     jobs:
