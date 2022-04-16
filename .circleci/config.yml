@@ -7,13 +7,12 @@ jobs:
     steps:
       - checkout  # checkout source code to working directory
       - run:
-          command: |  # create whl and use pipenv to install dependencies
-            python setup.py sdist bdist_wheel
-            sudo pip install pipenv
-            pipenv install dist/fastgrouper-0.1.0-py3-none-any.whl --no-cache-dir
-            pipenv install pytest
+          command: |  # Install package
+            python3 -m venv build_test
+            source build_test/bin/activate
+            python3 setup.py install
       - run:
-          command: |  # Run test suite
+          command: |  # Run tests
             pipenv run pytest -s -vv
 
 workflows:
