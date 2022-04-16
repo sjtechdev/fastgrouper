@@ -26,7 +26,7 @@ def baz(x, y):
 xvals = np.array([1, 2, 10])
 yvals = np.array([4, 5, 6])
   
-# Group IDS
+# Group ids
 gids  = np.array([1, -3, 1])
 
 # Perform groupby-apply; note that keyword args are supported as well.
@@ -53,7 +53,7 @@ def bop(x):
 # Sample arrays, to slice
 xvals = np.array([2, 3, 4])
   
-# Group IDS
+# Group ids
 gids  = np.array([10, -20, 10])
 
 grpd = fastgrouper.li.Grouped(gids)
