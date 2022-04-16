@@ -40,8 +40,6 @@ def test_li_grouped():
 
     # Prepare example
     li_grpr = fastgrouper.li.Grouped(GIDS)
-
-    # Check apply with keyword args
     result = li_grpr.apply(foobar_op, XVALS, y=YVALS)
 
     # Ensure returned result is a list
@@ -49,3 +47,12 @@ def test_li_grouped():
 
     # Check values
     assert_almost_equal(result, EXPECTED_APPLY)
+
+def test_grouped_ordering():
+
+    # Prepare example
+    li_grpr = fastgrouper.li.Grouped([-20, 10, -20, 10])
+    result = li_grpr.apply(lambda x: list(x), np.arange(4))
+
+    # Ensure ordering is preserved
+    assert result == [[0, 2], [1, 3]]
