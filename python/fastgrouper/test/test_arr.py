@@ -1,3 +1,4 @@
+import pytest
 import numpy as np
 from   numpy.testing import assert_almost_equal
 
@@ -14,37 +15,37 @@ def foobar_op(x, y):
     return np.mean(x + y)
 
 def test_arr_grouped():
-    
+
     # Prepare example
     arr_grpr = fastgrouper.arr.Grouped(GIDS)
-    
+
     # Check apply with positional args
     result = arr_grpr.apply(foobar_op, XVALS, YVALS)
-    
+
     # Ensure returned result is a numpy array
     assert isinstance(result, np.ndarray)
-    
+
     # Check values
     assert_almost_equal(result, np.array(EXPECTED_APPLY))
-    
+
     # Check values when using apply with keyword args
     result = arr_grpr.apply(foobar_op, XVALS, y=YVALS)
     assert_almost_equal(result, np.array(EXPECTED_APPLY))
-    
+
     # Check values when using apply_expand
     result = arr_grpr.apply_expand(foobar_op, XVALS, y=YVALS)
     assert_almost_equal(result, np.array(EXPECTED_APPLY_EXPAND))
-    
+
 def test_li_grouped():
-    
+
     # Prepare example
     li_grpr = fastgrouper.li.Grouped(GIDS)
-    
+
     # Check apply with keyword args
     result = li_grpr.apply(foobar_op, XVALS, y=YVALS)
-    
+
     # Ensure returned result is a list
     assert isinstance(result, list)
-    
+
     # Check values
     assert_almost_equal(result, EXPECTED_APPLY)
