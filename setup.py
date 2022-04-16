@@ -9,7 +9,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="fastgrouper",
-    version="0.1.1",
+    version="0.1.2",
     author="Shreyas Joshi",
     author_email="sjoshistrats@gmail.com",
     description="A package for applying efficient groupby operations.",
@@ -26,5 +26,8 @@ setuptools.setup(
     package_dir={"": "python"},
     packages=setuptools.find_packages(where="python"),
     python_requires=">=3.6",
-    install_requires=["numpy", "pandas"]
+    install_requires=["numpy", "pandas"],
+    extras_require={
+        "testing": ["pytest", "pytest-benchmark"]
+    }
 )
