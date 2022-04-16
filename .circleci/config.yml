@@ -10,7 +10,7 @@ jobs:
           command: |  # create whl and use pipenv to install dependencies
             python setup.py sdist bdist_wheel
             sudo pip install pipenv
-            pipenv install dist/fastgrouper-0.1.0-py3-none-any.whl
+            pipenv install dist/fastgrouper-0.1.0-py3-none-any.whl --no-cache-dir
             pipenv install pytest
       - run:
           command: |  # Run test suite
