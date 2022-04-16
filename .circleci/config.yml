@@ -12,6 +12,7 @@ jobs:
             pipenv install .
       - run:
           command: |  # Run tests
+            sudo pip install pytest
             pipenv run pytest python/fastgrouper/test/ -s -vv
 
 workflows:
