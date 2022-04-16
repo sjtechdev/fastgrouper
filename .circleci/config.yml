@@ -8,12 +8,12 @@ jobs:
       - checkout  # checkout source code to working directory
       - run:
           command: |  # Install package
-            python3 -m venv build_test
-            source build_test/bin/activate
-            python3 setup.py install
+            sudo pip install pipenv
+            pipenv install .
       - run:
           command: |  # Run tests
-            pipenv run pytest -s -vv
+            pipenv shell
+            pytest -s -vv python/fastgrouper/test/
 
 workflows:
   build_test:
