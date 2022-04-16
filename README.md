@@ -61,3 +61,21 @@ grpd.apply(bop, xvals) # [[2, 4], [3]]
 ```
   
 For additional examples, checkout the [tests](./python/fastgrouper/test).
+  
+# Benchmarks
+
+Checkout the benchmarks [here](./python/fastgrouper/test/test_grouped_benchmark.py) for a sample comparison between the `pandas` groupby-apply and `fastgrouper` groupby-apply workflows. While it is difficult to compare the two perfectly, I tried to make the comparison as fair as possible.
+
+Results from running the benchmarks on a sample machine with an Intel(R) Core(TM) i7-4870HQ CPU @ 2.50GHz:
+  
+```console
+---------------------------------------------------------------------------------------------- benchmark: 4 tests ---------------------------------------------------------------------------------------------
+Name (time in ms)                                  Min                Max               Mean            StdDev             Median               IQR            Outliers       OPS            Rounds  Iterations
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_fastgrouper_arr_slice_apply_benchmark      5.8296 (1.0)       6.6786 (1.0)       6.0080 (1.0)      0.1165 (1.0)       6.0071 (1.0)      0.1294 (1.0)          35;5  166.4435 (1.0)         147           1
+test_fastgrouper_all_steps_benchmark            7.7704 (1.33)     10.3270 (1.55)      8.0946 (1.35)     0.3171 (2.72)      8.0872 (1.35)     0.2511 (1.94)          6;2  123.5386 (0.74)        121           1
+test_pure_pandas_slice_apply_benchmark         42.4697 (7.29)     46.9096 (7.02)     43.0534 (7.17)     0.9816 (8.42)     42.6915 (7.11)     0.4361 (3.37)          2;3   23.2270 (0.14)         22           1
+test_pure_pandas_all_steps_benchmark           43.4275 (7.45)     45.2340 (6.77)     43.8837 (7.30)     0.4243 (3.64)     43.7748 (7.29)     0.4973 (3.84)          3;1   22.7875 (0.14)         23           1
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+
