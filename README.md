@@ -33,10 +33,10 @@ gids  = np.array([1, -3, 1])
 grpd = fastgrouper.arr.Grouped(gids)
 result = grpd.apply(baz, xvals, y=yvals) # np.array([7.5, 4])
 
-# Perform groupby-apply, and then expand results back to align with the gids provided.
-result = grpd.apply_expand(baz, xvals, yvals) # np.array([7.5, 4])
+# The gids correponding to the result above can be found via the `dedup_gids` attribute.
+grpd.dedup_gids # np.array([ 1, -3])
 
-# Perform groupby-apply, and then expand results back to align with the gids provided.
+# Users can also perform groupby-apply, and then expand results back to align with the original gids.
 result = grpd.apply_expand(baz, xvals, yvals) # np.array([7.5, 4, 7.5])
 ```
 
