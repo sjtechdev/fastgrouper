@@ -13,6 +13,7 @@ jobs:
       - run:
           command: |  # Run tests
             pipenv install pytest
+	    pipenv install pytest-benchmark
             pipenv run pytest python/fastgrouper/test/ -s -vv
 workflows:
   build_test:
