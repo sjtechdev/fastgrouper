@@ -60,4 +60,4 @@ grpd = fastgrouper.li.Grouped(gids)
 grpd.apply(bop, xvals) # returns [[2, 4], [3]]
 ```
   
-For additional examples, checkout the [tests](https://github.com/sjoshistrats/fastgrouper/tree/master/python/fastgrouper/test).
+For additional examples, checkout the [tests](./python/fastgrouper/test).
