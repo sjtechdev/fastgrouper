@@ -4,3 +4,6 @@
 grouper.egg-info
 dist
 fastgrouper.egg-info
+build
+Pipfile
+Pipfile.lock
