@@ -8,8 +8,7 @@ jobs:
       - checkout  # checkout source code to working directory
       - run:
           command: |  # Install package
-            sudo apt install python3-pip
-            sudo pip install -U pipenv
+            sudo pip3 install -U pipenv
             pipenv install .
       - run:
           command: |  # Run tests
