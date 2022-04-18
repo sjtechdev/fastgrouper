@@ -1,7 +1,7 @@
 [![<sjoshistrats>](https://circleci.com/gh/sjoshistrats/fastgrouper.svg?style=shield)](https://app.circleci.com/pipelines/github/sjoshistrats/fastgrouper?branch=master)
 
 # fastgrouper
-Fast groupby-apply operations, in python.
+Fast groupby-apply operations in python.
   
 # Install
   
