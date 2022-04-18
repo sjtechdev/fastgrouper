@@ -40,7 +40,7 @@ grpd.dedup_gids # np.array([ 1, -3])
 result = grpd.apply_expand(baz, xvals, yvals) # np.array([7.5, 4, 7.5])
 ```
 
-The `li` interface returns the results over the groups as a list (instead of an array); this may be useful for functions that return different-sized results. Note that in all interfaces (e.g. both `arr` and `li`), the order in which the group elements appear is preserved when the group slices are passed to the function being applied.
+The `li` interface returns the results over the groups as a list (instead of an array); this may be useful for functions that return different-sized results. Note that in all interfaces (e.g. both `arr` and `li`), the order of the group elements is preserved when the group slices are passed to the function being applied.
 
   
 ```python
